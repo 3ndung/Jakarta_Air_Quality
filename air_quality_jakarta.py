@@ -74,7 +74,7 @@ def color(aqi):
     return col
 
 for lat,lan,name,aqi in zip(ADATA['Latitude'],ADATA['Longitude'],ADATA['Name'],ADATA['AQI']): 
-    folium.Marker(location=[lat,lan],popup = name, 
+    folium.Marker(location=[lat,lan],popup = name+' : '+str(aqi), 
                   icon= folium.Icon(color=color(aqi), 
                   icon_color='yellow',icon = 'cloud')).add_to(map)
 
